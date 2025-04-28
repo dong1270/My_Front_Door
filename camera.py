@@ -3,15 +3,20 @@ import os
 import time
 
 def run(savePoint, name, i) :
-    camera = cv2.VideoCapture(0)
+    data_path = 'sample/' + name + '/'
+    face_pics = [f for f in os.listdir(data_path) if os.path.isfile(os.path.join(data_path, f))]
+    
+    file_cnt = len(face_pics)
+    
+    camera = cv2.VideoCapture(1)
     camera.set(3, 640)
     camera.set(4, 480)
 
     ret,frame = camera.read()
     if ret :
-        time.sleep(5)
+        time.sleep(1)
         frame = cv2.flip(frame, 1)
-        cv2.imwrite(savePoint + name + "/" + "tests" + str(i) + ".jpg", frame)
+        cv2.imwrite(savePoint + name + "/" + name + "img" + str(file_cnt + 1) + ".jpg", frame)
     
         camera.release()
         cv2.destroyAllWindows()
@@ -25,7 +30,7 @@ def main():
     if not os.path.exists(savePoint + name) :
         os.mkdir(savePoint + name)
     
-    for i in range(5):
+    for i in range(10):
         run(savePoint, name, i)
     
 if __name__ == '__main__':
