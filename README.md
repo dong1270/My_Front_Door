@@ -1,6 +1,6 @@
 # 🚪MY_FRONT_DOOR
 ## Demo
-![Demo.png](./Demo.png)
+![Demo.png](https://dong1270.github.io/my_portfolio/somenail/myfrontdoor.png)
 ## Environment
 - OS: MacOS, Raspbian
 - SKILL : 
@@ -15,6 +15,9 @@ OpenCV에서 제공하는 모델을 이용하여 나의 얼굴을 학습하고 �
 - hardware spec :
     - single board: RaspberryPi4
     - camera : Hansung HW10 FHD for Hello 웹캠
+
+### Flowchart :
+![flowchart](./flowchart.png)
 
 ---
 **Presentation** : [slide](https://www.figma.com/deck/5LZyBV6V5nJU8HABgzfU5F/HOME-IoT-Python?node-id=2001-55&t=nF6WKXo8afu3HhRC-1)
