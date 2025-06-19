@@ -4,13 +4,16 @@ def run() :
     allow_try = 0
     cmd = ""
     ledChk = 0
+    # TODO Home path 적기
+    HOMEPATH = "" 
+    
     while True:
         if ledChk == 0:
-            os.system("./led_src/y_led_on.run")
+            os.system(HOMEPATH + "/led_src/y_led_on.run")
             ledChk = 1
         else :
             ledChk = 0
-            os.system("./led_src/y_led_off.run")
+            os.system(HOMEPATH + "/led_src/y_led_off.run")
 
         if allow_try == 50:
             cmd = "none"
@@ -29,10 +32,10 @@ def run() :
         allow_try += 1
         print(allow_try)
 
-    os.system("./led_src/fron_door.run " + cmd)
+    os.system(HOMEPATH + "/led_src/fron_door.run " + cmd)
 
     if ledChk == 1:
-        os.system("./led_src/y_led_off.run")
+        os.system(HOMEPATH + "/led_src/y_led_off.run")
         
 if __name__ == "__main__":
     #if isNull() == 0 :

@@ -14,10 +14,11 @@ def run(savePoint, name, i) :
 
     ret,frame = camera.read()
     if ret :
-        time.sleep(1)
+        time.sleep(0.5)
         frame = cv2.flip(frame, 1)
-        cv2.imwrite(savePoint + name + "/" + name + "img" + str(file_cnt + 1) + ".jpg", frame)
-    
+        cv2.imwrite(savePoint + name + "/" + name + "img" + str(file_cnt + i) + ".jpg", frame)
+
+        print(savePoint + name + "/" + name + "img" + str(file_cnt + i) + ".jpg")
         camera.release()
         cv2.destroyAllWindows()
     else :
@@ -30,7 +31,7 @@ def main():
     if not os.path.exists(savePoint + name) :
         os.mkdir(savePoint + name)
     
-    for i in range(10):
+    for i in range(20):
         run(savePoint, name, i)
     
 if __name__ == '__main__':

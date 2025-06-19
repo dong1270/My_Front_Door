@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
 	char* result = argv[argc - 1];
 
-	int cnt 	= 30;
+	int cnt 		= 30;
 	int targetPin 	= 0;
 
 	if(wiringPiSetup() < 0)
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 	}
 
 	if(!strcmp(result, "pass"))	targetPin = GLED;
-	else				targetPin = RLED;
+	else						targetPin = RLED;
 
 	pinMode(targetPin, OUTPUT);
 

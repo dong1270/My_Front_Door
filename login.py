@@ -110,7 +110,7 @@ def run(models) :
                 
             #75 보다 크면 동일 인물로 간주해 UnLocked! 
             if confidence > 76:
-                print("unlock")
+                print("unlock: " + str(confidence))
                 break
             else:
             #75 이하면 타인.. Locked!!!
@@ -158,6 +158,7 @@ def isNull() :
     return len([f for f in listdir(data_path) if isfile(join(data_path, f))])
 
 if __name__ == "__main__":
+    models = trains()
     if isNull() == 0 :
         # 학습 시작
         models = trains()
